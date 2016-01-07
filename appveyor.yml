@@ -9,11 +9,8 @@ install:
 # Build the binary after tests
 build: false
 
-environment:
-  TOXENV: freeze
-
 test_script:
-  - tox
+  - tox -e py27,freeze
 
 artifacts:
   - path: .\dist\shub.exe
