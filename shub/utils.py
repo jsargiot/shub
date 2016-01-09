@@ -176,11 +176,14 @@ def _deploy_dependency_egg(project, endpoint, apikey):
     # XXX: Should endpoint point to /api/ instead of /api/scrapyd/ by default?
     url = urljoin(endpoint, '../eggs/add.json')
     data = {'project': project, 'name': name, 'version': version}
-    files = {'egg': (egg_name, open(egg_path, 'rb'))}
     auth = (apikey, '')
 
     click.echo('Deploying dependency to Scrapy Cloud project "%s"' % project)
-    make_deploy_request(url, data, files, auth)
+
+    with open(egg_path, 'rb') as fp:
+        files = {'egg': (egg_name, fp)}
+        make_deploy_request(url, data, files, auth)
+
     success = "Deployed eggs list at: https://dash.scrapinghub.com/p/%s/eggs"
     click.echo(success % project)
 
