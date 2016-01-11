@@ -16,7 +16,7 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
 
     brew install python
     # Now easy_install and pip are in /usr/local we need to force link
-    brew link --overwrite python
+    brew unlink python && brew link --overwrite python
 
     pip install virtualenv
 
