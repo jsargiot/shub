@@ -20,6 +20,8 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
 
     pip install virtualenv
 
+    pip --version
+
     # Create a virtualenv
     virtualenv ~/virtualenv/python2.7
 fi

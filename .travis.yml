@@ -9,7 +9,7 @@ matrix:
 install:
 - "./.travis-workarounds.sh"
 - '[ "$TRAVIS_OS_NAME" != osx ] || source ~/virtualenv/python2.7/bin/activate'
-- pip install -U tox twine wheel
+- "pip --version && pip install -U tox twine wheel"
 script: tox -e py27,freeze
 deploy:
   provider: pypi
