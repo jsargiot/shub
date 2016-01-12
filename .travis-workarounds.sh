@@ -21,12 +21,9 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
 
     ls -ltrah /usr/local/bin
 
-    PATH="/usr/local/bin:$PATH"
+    #PATH="/usr/local/bin:$PATH"
 
     /usr/local/bin/python --version
-
-    /usr/local/bin/pip install --upgrade virtualenv
-
     # Create a virtualenv
 
     /usr/local/bin/virtualenv --help
