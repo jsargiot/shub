@@ -25,14 +25,20 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
 
     /usr/local/bin/python --version
 
-    /usr/local/bin/pip install virtualenv
-
-    /usr/local/bin/pip --version
+    /usr/local/bin/pip install --upgrade virtualenv
 
     # Create a virtualenv
-    /usr/local/bin/virtualenv ~/virtualenv/python2.7
 
+    /usr/local/bin/virtualenv --help
+
+    /usr/local/bin/virtualenv ~/virtualenv/python2.7
     ~/virtualenv/python2.7/bin/python --version
+
+    /usr/local/bin/virtualenv -p /usr/local/bin/python ~/virtualenv/python2.7X
+    ~/virtualenv/python2.7X/bin/python --version
+
+
+
 fi
 
 # Workaround travis-ci/travis-ci#2065
