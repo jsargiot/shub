@@ -23,7 +23,7 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
 
     # Use brew python for virtualenv
     /usr/local/bin/virtualenv -p /usr/local/bin/python ~/virtualenv/python2.7
-    ~/virtualenv/python2.7X/bin/python --version
+    ~/virtualenv/python2.7/bin/python --version
 
 fi
 
