@@ -31,6 +31,8 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
 
     # Create a virtualenv
     /usr/local/bin/virtualenv ~/virtualenv/python2.7
+
+    ~/virtualenv/python2.7/bin/python --version
 fi
 
 # Workaround travis-ci/travis-ci#2065
