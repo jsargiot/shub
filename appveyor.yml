@@ -1,0 +1,28 @@
+
+version: '{branch}-{build}'
+
+install:
+  - "SET PATH=C:\\Python27;C:\\Python27\\Scripts;%PATH%"
+  - "SET TOX_TESTENV_PASSENV=HOME USERPROFILE HOMEPATH HOMEDRIVE"
+  - "pip install -U tox twine wheel"
+
+# Build the binary after tests
+build: false
+
+test_script:
+  - tox -e py27,freeze
+
+artifacts:
+  - path: .\dist\shub.exe
+    name: "shub Windows binary"
+
+deploy:
+  description: 'Release description'
+  provider: GitHub
+  auth_token:
+    secure: +8Ss4NwukKR+710btm0BnhxIcDBW/8cD5WKDv5BgqA1CjjBy+uI5T5Auhv2gYFAS
+  artifact: .\dist\shub.exe
+  draft: true
+  prerelease: true
+  on:
+    appveyor_repo_tag: true        # deploy on tag push only
