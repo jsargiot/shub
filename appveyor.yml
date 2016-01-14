@@ -21,8 +21,8 @@ deploy:
   provider: GitHub
   auth_token:
     secure: +8Ss4NwukKR+710btm0BnhxIcDBW/8cD5WKDv5BgqA1CjjBy+uI5T5Auhv2gYFAS
-  artifact: .\dist\shub.exe
+  artifact: dist\shub.exe
   draft: true
   prerelease: true
   on:
-    appveyor_repo_tag: true        # deploy on tag push only
+    appveyor_repo_tag: true
